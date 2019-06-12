@@ -1,1 +1,3 @@
- site da desenvolvimento de sistema do aprigio.
+ site de desenvolvimento de sistema .
+
+ desenvolvindo pelos alunos da Etec de Aprigio Gonzaga.
