@@ -12,7 +12,7 @@ $(function() {
     $("[data-bg]").each(function() {
         let $this = $(this),
             $bg = $this.attr("data-bg");
-
+         console.log($("[data-bg]").css )
         $this.css({
             backgroundImage: 'url(' + $bg + ')',
             backgroundPosition: 'center',
@@ -157,5 +157,44 @@ $(function() {
         });
         return false;
     });
+
+
+
+ ///  foto passado
+function atualizar_img(){
+
+   let cont=0
+   
+
+ function loop(){
+     window.requestAnimationFrame(loop);
+     cont++
+     console.log(cont)
+     if (cont==(28*5)){ 
+         $("[data-bg]").css({
+         backgroundImage: 'url(' + "img/senne.jpg" + ')'
+     })
+
+     }
+    else if(cont==(28*10)){
+          $("[data-bg]").css({
+          backgroundImage: 'url(' + "img/uni2.jpg" + ')'
+          })
+    }
+    else if(cont==(28*15)){
+          $("[data-bg]").css({
+           backgroundImage: 'url(' + "img/hero.jpg" + ')'
+    })
+
+    cont=0
+
+    }
+ } 
+ loop(); 
+  
+}
+
+
+ atualizar_img();
 
 });
