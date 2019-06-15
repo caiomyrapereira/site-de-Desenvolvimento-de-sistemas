@@ -12,13 +12,21 @@ $(function() {
     $("[data-bg]").each(function() {
         let $this = $(this),
             $bg = $this.attr("data-bg");
-         console.log($("[data-bg]").css )
-        $this.css({
+        $this.hover(function(){
+         $this.css({
             backgroundImage: 'url(' + $bg + ')',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',
-            backgroundSize: 'center'
+            backgroundSize: 'center',
+            opacity:1
+         });
+         }, function(){
+          $this.css({
+             opacity:0.5
+          });
+
         });
+
         $this.prepend("<div class='overlay'></div>");
     });
 
@@ -169,19 +177,21 @@ function atualizar_img(){
  function loop(){
      window.requestAnimationFrame(loop);
      cont++
-     console.log(cont)
-     if (cont==(28*5)){ 
+     if (cont==(28*10)){ 
+        
          $("[data-bg]").css({
          backgroundImage: 'url(' + "img/senne.jpg" + ')'
      })
 
      }
-    else if(cont==(28*10)){
+    else if(cont==(28*20)){
+
           $("[data-bg]").css({
           backgroundImage: 'url(' + "img/uni2.jpg" + ')'
           })
     }
-    else if(cont==(28*15)){
+    else if(cont==(28*30)){
+
           $("[data-bg]").css({
            backgroundImage: 'url(' + "img/hero.jpg" + ')'
     })
