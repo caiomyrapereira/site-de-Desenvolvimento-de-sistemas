@@ -12,7 +12,7 @@ $(function() {
     $("[data-bg]").each(function() {
         let $this = $(this),
             $bg = $this.attr("data-bg");
-         console.log($("[data-bg]").css )
+
         $this.css({
             backgroundImage: 'url(' + $bg + ')',
             backgroundPosition: 'center',
@@ -108,7 +108,7 @@ $(function() {
         return false;
     });
 
-    $("#contact-form").submit(function() {
+    /*$("#contact-form").submit(function() {
         let $this = $(this);
         $.ajax({
             url: 'server/send.php',
@@ -156,45 +156,39 @@ $(function() {
             }
         });
         return false;
-    });
+    });*/
 
+    function atualizar_img() {
 
+        let cont = 0
 
- ///  foto passado
-function atualizar_img(){
+        function loop() {
+            window.requestAnimationFrame(loop);
+            cont++
+     
+            if (cont == (28 * 5)) {
+                $("[data-bg]").css({
+                    backgroundImage: 'url(' + "img/senne.jpg" + ')'
+                })
 
-   let cont=0
-   
+            } else if (cont == (28 * 10)) {
+                $("[data-bg]").css({
+                    backgroundImage: 'url(' + "img/senne2.jpg" + ')'
+                })
+            } else if (cont == (28 * 15)) {
+                $("[data-bg]").css({
+                    backgroundImage: 'url(' + "img/hero.jpg" + ')'
+                })
 
- function loop(){
-     window.requestAnimationFrame(loop);
-     cont++
-     console.log(cont)
-     if (cont==(28*5)){ 
-         $("[data-bg]").css({
-         backgroundImage: 'url(' + "img/senne.jpg" + ')'
-     })
+                cont = 0
 
-     }
-    else if(cont==(28*10)){
-          $("[data-bg]").css({
-          backgroundImage: 'url(' + "img/uni2.jpg" + ')'
-          })
-    }
-    else if(cont==(28*15)){
-          $("[data-bg]").css({
-           backgroundImage: 'url(' + "img/hero.jpg" + ')'
-    })
-
-    cont=0
+            }
+        }
+        loop();
 
     }
- } 
- loop(); 
-  
-}
 
 
- atualizar_img();
+    atualizar_img();
 
 });
