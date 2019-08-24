@@ -159,32 +159,41 @@ $(function() {
     });*/
 
     function atualizar_img() {
+      
+      let cont = 0;
+      setInterval( carrosselTime  ,5000)
+ 
+       function  carrosselTime(){
+          
+          
 
-        let cont = 0
-
-        function loop() {
-            window.requestAnimationFrame(loop);
             cont++
      
-            if (cont == (28 * 5)) {
+            if (cont == 1) {
                 $("[data-bg]").css({
                     backgroundImage: 'url(' + "img/senne.jpg" + ')'
                 })
 
-            } else if (cont == (28 * 10)) {
+            } 
+            else if (cont == 2){
                 $("[data-bg]").css({
                     backgroundImage: 'url(' + "img/senne2.jpg" + ')'
                 })
-            } else if (cont == (28 * 15)) {
+            } 
+            else if (cont == 3) {
                 $("[data-bg]").css({
                     backgroundImage: 'url(' + "img/hero.jpg" + ')'
                 })
 
-                cont = 0
+                cont = 0;
 
             }
-        }
-        loop();
+        
+        
+       } 
+
+
+       
 
     }
 
