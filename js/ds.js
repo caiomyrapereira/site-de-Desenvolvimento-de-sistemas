@@ -157,44 +157,32 @@ $(function() {
         });
         return false;
     });*/
-
+  
+    let cont = 0;
     function atualizar_img() {
-      
-      let cont = 0;
-      setInterval( carrosselTime  ,5000)
- 
-       function  carrosselTime(){
-          
-          
+      setInterval( carrosselTime , 5000 )
+    }
 
-            cont++
-     
-            if (cont == 1) {
-                $("[data-bg]").css({
-                    backgroundImage: 'url(' + "img/senne.jpg" + ')'
-                })
+    function  carrosselTime(){
+          cont++     
+          switch(cont){
+          case 1:
+          trocaImg('img/senne.jpg')
+          break;
+          case 2:
+          trocaImg('img/senne2.jpg')
+          break;
+          case 3:
+          trocaImg('img/hero.jpg')
+          cont = 0;
+          break;
+        } 
+    } 
 
-            } 
-            else if (cont == 2){
-                $("[data-bg]").css({
-                    backgroundImage: 'url(' + "img/senne2.jpg" + ')'
-                })
-            } 
-            else if (cont == 3) {
-                $("[data-bg]").css({
-                    backgroundImage: 'url(' + "img/hero.jpg" + ')'
-                })
-
-                cont = 0;
-
-            }
-        
-        
-       } 
-
-
-       
-
+    function trocaImg( img ){
+        $("[data-bg]").css({
+           backgroundImage: 'url(' + img + ')'
+        })
     }
 
 
